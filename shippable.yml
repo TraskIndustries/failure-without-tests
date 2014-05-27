@@ -1,0 +1,12 @@
+language: java
+
+jdk:
+   - oraclejdk7
+   - openjdk6
+   - openjdk7
+
+script: 
+   - mkdir -p shippable/testresults/
+   - mvn clean install -DreportsDirectory=shippable/testresults
+   - cp target/surefire-reports/* shippable/testresults/
+
